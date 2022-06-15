@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { css } from 'styled-components';
 
@@ -132,33 +132,106 @@ const WrapperGrid = styled.div`
     `}
 `;
 
-export const ContactForm = () => (
-  <div>
-    <h3 style={{ color: 'black' }}>Ponte en contacto</h3>
-    <Form>
-      <WrapperGrid>
-        <Label>Nombre</Label>
-        <Input type='text' name='name' />
-      </WrapperGrid>
-      <WrapperGrid>
-        <Label>Compañia</Label>
-        <Input type='text' name='company' />
-      </WrapperGrid>
-      <WrapperGrid>
-        <Label>Correo Electronico</Label>
-        <Input type='email' name='email' />
-      </WrapperGrid>
-      <WrapperGrid>
-        <Label>Numero Telefonico</Label>
-        <Input type='text' name='phone' />
-      </WrapperGrid>
-      <WrapperGrid full>
-        <Label>Escriba su mensaje</Label>
-        <Textarea name='message' rows='5'></Textarea>
-      </WrapperGrid>
-      <WrapperGrid full>
-        <FormButton>Enviar</FormButton>
-      </WrapperGrid>
-    </Form>
-  </div>
-);
+export const ContactForm = () => {
+  const [formData, updateFormData] = useState({
+    nombre: '',
+    compania: '',
+    email: '',
+    telefono: '',
+    mensaje: '',
+  });
+
+  const sendFeedback = (serviceID, templateID, variables) => {
+    window.emailjs
+      .send(serviceID, templateID, variables)
+      .then((res) => {
+        console.log('Correo fue enviado exitosamente');
+      })
+      .catch((err) => console.error('Ha ocurrido un error', err));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`Recibimos su mensaje y ya estamos trabajando en ello `);
+    const templateID = 'endobarr_contact_form';
+    const serviceID = 'service_ey0iqv8';
+    sendFeedback(serviceID, templateID, {
+      nombre: formData.nombre,
+      compania: formData.compania,
+      email: formData.email,
+      telefono: formData.telefono,
+      mensaje: formData.mensaje,
+    });
+
+    console.log(formData);
+    // ... submit to email
+  };
+
+  const handleChange = (event) => {
+    const { value, name } = event.target;
+
+    updateFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  return (
+    <div>
+      <h3 style={{ color: 'black' }}>Ponte en contacto</h3>
+      <Form onSubmit={handleSubmit}>
+        <WrapperGrid>
+          <Label>Nombre</Label>
+          <Input
+            type='text'
+            name='nombre'
+            placeholder='Escriba su nombre'
+            value={formData.nombre}
+            onChange={handleChange}
+          />
+        </WrapperGrid>
+        <WrapperGrid>
+          <Label>Compañia</Label>
+          <Input
+            type='text'
+            name='compania'
+            placeholder='Compañia'
+            value={formData.compania}
+            onChange={handleChange}
+          />
+        </WrapperGrid>
+        <WrapperGrid>
+          <Label>Correo Electrónico</Label>
+          <Input
+            type='email'
+            name='email'
+            placeholder='Escriba su correo electrónico'
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </WrapperGrid>
+        <WrapperGrid>
+          <Label>Numero Telefonico</Label>
+          <Input
+            type='tel'
+            name='telefono'
+            placeholder='Escriba su telefono'
+            value={formData.telefono}
+            onChange={handleChange}
+          />
+        </WrapperGrid>
+        <WrapperGrid full>
+          <Label>Escriba su mensaje</Label>
+          <Textarea
+            name='mensaje'
+            rows='5'
+            value={formData.mensaje}
+            onChange={handleChange}
+          ></Textarea>
+        </WrapperGrid>
+        <WrapperGrid full>
+          <FormButton>Enviar</FormButton>
+        </WrapperGrid>
+      </Form>
+    </div>
+  );
+};
