@@ -5,7 +5,7 @@ import 'react-whatsapp-widget/dist/index.css';
 const Whatsapp = () => {
   return (
     <WhatsAppWidget
-      phoneNumber='+17177589669'
+      phoneNumber='524494940920'
       textReplyTime='Tiempo de respuesta aproximado: 1 hora'
       message={'¡Hola! 👋🏼 \n\nEn que puedo ayudarle?'}
       companyName='Endobarr'

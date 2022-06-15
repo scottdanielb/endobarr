@@ -4,7 +4,8 @@ export const homeObjOne = {
   headLine: 'Escoja El Mejor Cuidado Para Su Dentadura',
   topLine1: 'Dr. Daniel Barrera Lopez',
   topLine2: 'Posgrado UNAM',
-  topLine3: 'Cedula de Especilidad: 1234567',
+  topLine3: 'Cedula Profesional: 653636',
+  topLine4: 'Cedula de Especilidad: 3625890',
   description1:
     'En endobarr nos caracterizamos por ofrecer tratamientos endodonticos mínimamente invasivos. Trabajamos para crear la mejor sonrisa en nuestros pacientes.',
   description2:

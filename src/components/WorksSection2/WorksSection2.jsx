@@ -33,7 +33,7 @@ function Pricing() {
                 <WorksCardText>Telefono Fijo: </WorksCardText>
                 <WorksCardSubText>(449) 916-2472</WorksCardSubText>
                 <WorksCardText>Telefono Celular: </WorksCardText>
-                <WorksCardSubText>(449) 718-8470</WorksCardSubText>
+                <WorksCardSubText>(449) 494-0920</WorksCardSubText>
               </PricingCardInfo>
             </PricingCard>
             <PricingCard>
@@ -43,8 +43,8 @@ function Pricing() {
                 </PricingCardIcon>
                 <PricingCardPlan>Ubicación</PricingCardPlan>
                 <WorksCardText>
-                  Calle Francisco I. Madero Colonia Centro Aguascalientes, Ags
-                  CP#20000
+                  Av. Francisco I. Madero 723 1er Piso Colonia Centro
+                  Aguascalientes, Ags CP#20000
                 </WorksCardText>
               </PricingCardInfo>
             </PricingCard>

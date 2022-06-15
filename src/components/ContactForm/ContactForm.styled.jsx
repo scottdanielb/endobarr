@@ -115,10 +115,10 @@ export const CompanyInfo = () => (
     <CompanyName>Endobarr</CompanyName>
     <WrapperList>
       <li style={{ fontWeight: 'bold' }}>Dr. Daniel Barrera Lopez</li>
-      <li>Francisco I. Madero 102 Colonia Centro</li>
+      <li>Av. Francisco I. Madero 723 1er Piso Colonia Centro</li>
       <li>CP 20000 Aguascalientes, AGS</li>
-      <li>Telefono Fijo: 449-996-2173</li>
-      <li>Telefono Celular: 449-996-2173</li>
+      <li>Telefono Fijo: (449) 916-2472</li>
+      <li>Telefono Celular: (449) 494-0920</li>
       <li>contacto@endobarr.com</li>
     </WrapperList>
   </WrapperCompanyInfo>

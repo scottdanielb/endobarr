@@ -18,6 +18,7 @@ const InfoSection = ({
   topLine1,
   topLine2,
   topLine3,
+  topLine4,
   description1,
   description2,
 }) => {
@@ -30,8 +31,15 @@ const InfoSection = ({
               <TextWrapper>
                 <Heading>{headLine}</Heading>
                 <TopLine>{topLine1}</TopLine>
-                <TopLine>{topLine2}</TopLine>
-                <TopLine>{topLine3}</TopLine>
+                <TopLine style={{ color: '#f40f40', fontWeight: 'normal' }}>
+                  {topLine2}
+                </TopLine>
+                <TopLine style={{ color: '#f40f40', fontWeight: 'normal' }}>
+                  {topLine3}
+                </TopLine>
+                <TopLine style={{ color: '#f40f40', fontWeight: 'normal' }}>
+                  {topLine4}
+                </TopLine>
               </TextWrapper>
             </Column1>
             <Column2>
